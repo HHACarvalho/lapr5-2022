@@ -1,0 +1,37 @@
+.homepage-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position:absolute;
+  top:0;
+  right:0;
+  bottom:0;
+  left:0;
+
+  z-index: -1;
+}
+
+.homepage-hero li {
+  background-color: white;
+  border-radius: 20px;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 30px;
+  text-align: center;
+}
+
+.homepage-hero li:hover {
+  background-color: #0073ff;
+}
+
+.homepage-hero li .description {
+  color: black;
+  display: block;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.button-pad:hover {
+  opacity: 80%;
+}
