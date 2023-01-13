@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "af12b4ed-8710-4f0a-9007-68e5587d0af9",
+		"name": "Route Insert",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23885197"
+	},
+	"item": [
+		{
+			"name": "1.CreateRoute",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\": \"1\",\r\n\t\"origin\": \"ABC\",\r\n\t\"destination\": \"DEF\",\r\n\t\"distance\": 10,\r\n\t\"timeDistance\": 10,\r\n\t\"energySpent\": 10,\r\n\t\"extraBatteryTime\": 10 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/route/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2.CreateRoute",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\": \"2\",\r\n\t\"origin\": \"ABC\",\r\n\t\"destination\": \"GHI\",\r\n\t\"distance\": 10,\r\n\t\"timeDistance\": 10,\r\n\t\"energySpent\": 10,\r\n\t\"extraBatteryTime\": 10 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/route/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3.CreateRoute",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\": \"3\",\r\n\t\"origin\": \"DEF\",\r\n\t\"destination\": \"GHI\",\r\n\t\"distance\": 20,\r\n\t\"timeDistance\": 20,\r\n\t\"energySpent\": 20,\r\n\t\"extraBatteryTime\": 20 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/route/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4.CreateRoute",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\": \"4\",\r\n\t\"origin\": \"GHI\",\r\n\t\"destination\": \"ABC\",\r\n\t\"distance\": 30,\r\n\t\"timeDistance\": 30,\r\n\t\"energySpent\": 30,\r\n\t\"extraBatteryTime\": 30 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/route/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5.CreateRoute",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\": \"5\",\r\n\t\"origin\": \"ABC\",\r\n\t\"destination\": \"JKL\",\r\n\t\"distance\": 20,\r\n\t\"timeDistance\": 20,\r\n\t\"energySpent\": 20,\r\n\t\"extraBatteryTime\": 20 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/route/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6.CreateRoute",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"routeId\": \"6\",\r\n\t\"origin\": \"GHI\",\r\n\t\"destination\": \"DEF\",\r\n\t\"distance\": 10,\r\n\t\"timeDistance\": 10,\r\n\t\"energySpent\": 10,\r\n\t\"extraBatteryTime\": 10 \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/route/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"route",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

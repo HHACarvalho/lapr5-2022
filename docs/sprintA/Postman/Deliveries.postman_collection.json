@@ -1,0 +1,312 @@
+{
+	"info": {
+		"_postman_id": "b62a28e9-5271-4eb8-b475-dc0537c512f0",
+		"name": "Deliveries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23907447"
+	},
+	"item": [
+		{
+			"name": "Verificação da não existência de uma Delivery com id 242",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryIdentifier\": \"242\",\r\n    \"day\": 2,\r\n    \"month\": \"january\",\r\n    \"year\": 2012,\r\n    \"mass\": 56.0,\r\n    \"placingTime\": 36,\r\n    \"storeId\": \"xxx\",\r\n    \"withdrawalTime\": 64\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Delivery/ByIdentifier/242",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Delivery",
+						"ByIdentifier",
+						"242"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de uma Delivery com id 242",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryIdentifier\": \"242\",\r\n    \"day\": 2,\r\n    \"month\": \"february\",\r\n    \"year\": 2012,\r\n    \"mass\": 56,\r\n    \"placingTime\": 43,\r\n    \"storeId\": \"xxx\",\r\n    \"withdrawalTime\": 657\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Delivery",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Delivery"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificação da existência de uma delivery com id 242",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Delivery/ByIdentifier/242",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Delivery",
+						"ByIdentifier",
+						"242"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Mudanças feitas na Delivery com id 242",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryIdentifier\": \"242\",\r\n    \"day\": 23,\r\n    \"month\": \"may\",\r\n    \"year\": 2002,\r\n    \"mass\": 12,\r\n    \"placingTime\": 22,\r\n    \"withdrawalTime\": 22,\r\n    \"storeId\": \"xxx\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Delivery/ByIdentifier/242",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Delivery",
+						"ByIdentifier",
+						"242"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificar que as mudanças foram efetuadas na Delivery com id 242",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The day was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.day).to.eql(23)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The month was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.month).to.eql('may')\r",
+							"});\r",
+							"pm.test(\"The year was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.year).to.eql(2002)\r",
+							"});\r",
+							"pm.test(\"The mass was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.mass).to.eql(12)\r",
+							"});\r",
+							"pm.test(\"The placing time was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.placingTime).to.eql(22)\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The store id was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.storeId).to.eql(\"xxx\")\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The withdrawal time was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.withdrawalTime).to.eql(22)\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Delivery/ByIdentifier/242",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Delivery",
+						"ByIdentifier",
+						"242"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post com id de Delivery já usado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"deliveryIdentifier\": \"242\",\r\n    \"day\": 23,\r\n    \"month\": \"may\",\r\n    \"year\": 2002,\r\n    \"mass\": 12,\r\n    \"placingTime\": 22,\r\n    \"storeId\": \"xxx\",\r\n    \"withdrawalTime\": 22\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Delivery",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Delivery"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

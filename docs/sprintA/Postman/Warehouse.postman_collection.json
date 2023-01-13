@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "8ddff7d9-d8ff-458d-a8a6-1630e562be31",
+		"name": "Warehouse Management - Warehouse User story",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23907464"
+	},
+	"item": [
+		{
+			"name": "Verificação da não existência de uma warehouse com id 3F5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses/ByIdentifier/3F5",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses",
+						"ByIdentifier",
+						"3F5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de uma warehouse em que o id é 3F5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseIdentifier\":\"3F5\",\r\n    \"designation\":\"Cascais\",\r\n    \"street\":\"Rua das oliveiras\",\r\n    \"number\":88,\r\n    \"postalCode\": \"3610-013\",\r\n    \"country\":\"Portugal, Lisboa\",\r\n    \"latitude\":33,\r\n    \"longitude\":44,\r\n    \"altitude\":9\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificação da existência de uma warehouse com id 3F5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses/ByIdentifier/3F5",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses",
+						"ByIdentifier",
+						"3F5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Modificação da designação da warehouse com id 3F5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseIdentifier\":\"3F5\",\r\n    \"designation\":\"Oriente1\",\r\n    \"street\":\"Rua das oliveiras1\",\r\n    \"number\":881,\r\n    \"postalCode\": \"3610-014\",\r\n    \"country\":\"Portugal1\",\r\n    \"latitude\":331,\r\n    \"longitude\":441,\r\n    \"altitude\":91\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses/ByIdentifier/3F5",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses",
+						"ByIdentifier",
+						"3F5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Verificação da modificação da designação da warehouse com id 3F5",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The designation was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.designation).to.eql('Oriente1')\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The street was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.street).to.eql('Rua das oliveiras1')\r",
+							"});\r",
+							"pm.test(\"The number was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.number).to.eql(881)\r",
+							"});\r",
+							"pm.test(\"The postal code was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.postalCode).to.eql('3610-014')\r",
+							"});\r",
+							"pm.test(\"The country was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.country).to.eql('Portugal1')\r",
+							"});\r",
+							"\r",
+							"pm.test(\"The latitude was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.latitude).to.eql(331)\r",
+							"});\r",
+							"pm.test(\"The longitude was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.longitude).to.eql(441)\r",
+							"});\r",
+							"pm.test(\"The altitude was changed.\",function(){\r",
+							"    var jasonValue = pm.response.json();\r",
+							"    pm.expect(jasonValue.altitude).to.eql(91)\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses/ByIdentifier/3F5",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses",
+						"ByIdentifier",
+						"3F5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post com id de warehouse já usado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseIdentifier\":\"3F5\",\r\n    \"designation\":\"Cascais\",\r\n    \"street\":\"Rua das oliveiras\",\r\n    \"number\":88,\r\n    \"postalCode\": \"3610-013\",\r\n    \"country\":\"Portugal, Lisboa\",\r\n    \"latitude\":33,\r\n    \"longitude\":44,\r\n    \"altitude\":9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de warehouse com codigo postal errado",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseIdentifier\":\"3F5\",\r\n    \"designation\":\"Cascais\",\r\n    \"street\":\"Rua das oliveiras\",\r\n    \"number\":88,\r\n    \"postalCode\": \"36189-0139\",\r\n    \"country\":\"Portugal, Lisboa\",\r\n    \"latitude\":33,\r\n    \"longitude\":44,\r\n    \"altitude\":9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criação de warehouse com designação inválida",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {\r",
+							"    pm.response.to.have.status(400);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseIdentifier\":\"3S5\",\r\n    \"designation\":\"Cascaishhhhhhhhhhhhhhhhhhhhhhhhhhhfggggggggggggggggggggggggggggggggggggghhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhggggggggggggggggggggggggggggggggggggggggggyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyhhhhhhhhhhhhhhhhhh\",\r\n    \"street\":\"Rua das oliveiras\",\r\n    \"number\":88,\r\n    \"postalCode\": \"3618-839\",\r\n    \"country\":\"Portugal, Lisboa\",\r\n    \"latitude\":33,\r\n    \"longitude\":44,\r\n    \"altitude\":9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://127.0.0.1:5001/api/Warehouses",
+					"protocol": "https",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"Warehouses"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
