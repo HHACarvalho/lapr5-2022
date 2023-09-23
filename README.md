@@ -1,6 +1,6 @@
 # LAPR5-G70-2022 #
 
-Repository for the LAPR5 project of 2022.
+Repository for the LAPR5 project
 
 ### Modules ###
 
